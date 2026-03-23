@@ -73,12 +73,9 @@ permissions:
 
 ## 安装与使用
 
-1. **安装插件**：
-   - 将插件导出为 `.sirc` 文件
-   - 放入 `plugins/ScriptIrc/scripts/src/` 目录
-   - 在游戏内或控制台执行 `/scriptirc compiler InviteReward`
-   - 编译成功后重启服务器
-
+1. **插件安装**：
+   - 将插件拖入plugins文件夹
+    
 2. **玩家使用**：
    - 邀请者输入 `/cinvc` 生成邀请码
    - 将邀请码分享给其他玩家
