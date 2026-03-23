@@ -1,0 +1,54 @@
+# InviteReward 插件配置文件
+ScriptIrc-config-version: 1
+
+# 奖励指令列表（当邀请码被成功使用时执行）
+# 可用变量：%inviter% (邀请者), %invitee% (被邀请者)
+reward-commands:
+  - "give %inviter% diamond 1"
+  - "give %invitee% iron_ingot 5"
+
+# 邀请码生成设置
+invite-code:
+  # 邀请码格式：XXXX-XXXX（大写字母）
+  format: "XXXX-XXXX"
+  # 是否允许多人使用同一个邀请码
+  allow-multiple-uses: true
+  # 是否禁止邀请者使用自己的邀请码
+  prevent-self-use: true
+  # 是否防止一个玩家多次使用邀请码（无论谁的）
+  prevent-player-reuse: true
+
+# 奖励执行设置
+reward:
+  # 当邀请者不在线时的处理方式
+  # 可选：queue（队列等待）、skip_inviter（跳过邀请者）、execute_now（立即执行，可能失败）
+  offline-handling: "queue"
+  # 队列等待的最大时间（分钟），0 表示无限等待
+  queue-max-wait: 1440  # 24小时
+
+# 权限设置（是否启用权限检查）
+permissions:
+  # 生成邀请码是否需要权限
+  require-invite-use: false
+  # 使用邀请码是否需要权限
+  require-use-code: false
+  # 查看统计是否需要权限
+  require-view-stats: true
+
+# 消息配置
+messages:
+  prefix: "&6[邀请奖励]&f "
+  code-generated: "&a你的邀请码已生成：&e%code%\n&7使用命令 &e/icode <邀请码> &7或 &e/invc <邀请码> &7让其他玩家输入来获得奖励。"
+  code-regenerated: "&a你的新邀请码已生成：&e%code%\n&c旧的邀请码已失效。"
+  code-invalid: "&c邀请码无效或已失效。"
+  code-self-use: "&c你不能使用自己的邀请码。"
+  code-already-used: "&c你已经使用过邀请码，无法再次使用。"
+  success: "&a邀请成功！奖励已发放。"
+  inviter-offline: "&e邀请者当前不在线，奖励已加入队列，待其上线后发放。"
+  stats-header: "&6=== 邀请统计 ==="
+  stats-line: "&e%player% &7- &a%count% &7次邀请"
+  stats-none: "&c暂无邀请数据。"
+  no-permission: "&c你没有权限执行此命令。"
+  usage-cinvc: "&7用法：&e/cinvc"
+  usage-icode: "&7用法：&e/icode <邀请码> &7或 &e/invc <邀请码>"
+  usage-inv: "&7用法：&e/inv"

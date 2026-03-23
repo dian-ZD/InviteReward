@@ -1,0 +1,15 @@
+# InviteReward 数据文件
+# 请勿手动编辑，除非你知道自己在做什么
+
+# 邀请者UUID -> 邀请码
+inviter-codes: {}
+
+# 邀请者UUID -> 邀请次数
+inviter-counts: {}
+
+# 已经使用过邀请码的玩家UUID列表
+used-players: []
+
+# 待处理奖励队列
+# 结构：邀请者UUID -> 序号 -> {invitee: 被邀请者UUID, timestamp: 时间戳}
+pending-rewards: {}

@@ -1,0 +1,22 @@
+name: InviteReward
+version: '1.0.0'
+main: io.Sriptirc_wp_989.invitereward.Invitereward
+api-version: '1.16'
+authors: ['wp:989']
+description: 'Minecraft 1.21.8 服务器邀请奖励系统'
+commands:
+    cinvc:
+        description: '生成邀请码'
+    icode:
+        description: '使用邀请码'
+    inv:
+        description: '查看邀请统计'
+    invc:
+        description: '使用邀请码'
+permissions:
+    invite.use:
+        description: '允许生成和使用邀请码'
+        default: false
+    invite.admin:
+        description: '允许查看邀请统计'
+        default: false
